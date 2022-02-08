@@ -13,6 +13,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
 
 if has("nvim")
+  "Copilot
+  Plug 'github/copilot.vim'
+  "Windows
+  Plug 'pprovost/vim-ps1'
+  "
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/nvim-cmp'

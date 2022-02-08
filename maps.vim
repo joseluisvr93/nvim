@@ -1,4 +1,3 @@
-" Description: Keymaps
 let mapleader=" "
 
 nnoremap <S-C-p> "0p
@@ -35,7 +34,7 @@ vnoremap <silent> # :<C-U>
 " Tabs
 
 " Open current directory
-nmap <Leader>v <C-v>
+nmap <Leader>c <C-v>
 nmap tt :tabnew<CR>
 nmap te :tabedit 
 nmap <S-Tab> :tabprev<Return>
@@ -54,8 +53,8 @@ map <Leader>k <C-w>k
 map <Leader>j <C-w>j
 map <Leader>l <C-w>l
 " Resize window
-"nmap <C-w><up> <C-w>+
-"nmap <C-w><down> <C-w>-
+nmap <C-w><up> <C-w>+
+nmap <C-w><down> <C-w>-
 nnoremap <Leader>> 10<C-w>>
 nnoremap <Leader>< 10<C-w><
 
@@ -69,10 +68,21 @@ nnoremap <Space>q :q<CR>
 
 inoremap jk <ESC>
 
-nnoremap <f9> :sp term://python3 %<cr><c-w><c-r>:resize 20<cr>a
+nnoremap <f9> :sp term://python %<cr><c-w><c-r>:resize 20<cr>a
+augroup compileandrun
+    autocmd!
+    autocmd filetype python nnoremap <f9>:sp term://python %<cr><c-w><c-r>:resize 20<cr>a
+    autocmd filetype cpp nnoremap <f5> :w <bar> !g++ -std=c++17 % <cr> :vnew <bar> :te "a.exe" <cr><cr>
+    autocmd filetype cpp nnoremap <f6> :vnew <bar> :te "a.exe" <cr>
+augroup END
 :set splitright
 nnoremap <C-t> :vsp<CR>:term<CR>i 
 tnoremap <Esc> <C-\><C-n>
 
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
+
+vmap <Space>+ <Plug>NERDCommenterToggle
+nmap <Space>+ <Plug>NERDCommenterToggle

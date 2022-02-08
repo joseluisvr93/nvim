@@ -29,9 +29,23 @@ set scrolloff=10
 set expandtab
 set noswapfile
 "let loaded_matchparen = 1
-"set shell=zsh
 set backupskip=/tmp/*,/private/tmp/*
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
+set clipboard+=unnamed,unnamedplus
+
+"MS-Windows
+"set shell=pwsh.exe
+"set shellcmdflag=-NoProfile\ -NoLogo\ -NonInteractive\ -Command
+"set shellpipe=|
+"set shellredir=>
+if has('win32')
+    let &shell = 'pwsh'
+    let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[Console]::UTF8;'
+    "let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+		let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+		let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+		set shellquote= shellxquote= 
+endif
 
 " incremental substitution (neovim)
 if has('nvim')
@@ -55,7 +69,7 @@ set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
-set backspace=start,eol,indent
+set backspace=indent,eol,start
 " Finding files - Search down into subfolders
 set path+=**
 set wildignore+=*/node_modules/*

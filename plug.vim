@@ -62,6 +62,8 @@ if has("nvim")
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePluginp' }
   Plug 'folke/lsp-colors.nvim'
   Plug 'windwp/nvim-autopairs'
+
+  Plug 'mikelue/vim-maven-plugin'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

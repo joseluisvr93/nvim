@@ -109,8 +109,10 @@ end
     experimentar = {
       ghost_text = true,
     },
-    documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    window = {
+      documentation = {
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      },
     },
 
   })

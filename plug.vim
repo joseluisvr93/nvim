@@ -11,6 +11,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
+"Plug 'benmills/vimux'
+Plug 'ctrlpvim/ctrlp.vim'
 
 if has("nvim")
   "Copilot

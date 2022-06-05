@@ -1,4 +1,70 @@
-let mapleader=" "
+let mapleader=";"
+
+"Shortcurt to edit this config file: (e)dit (c)onfiguration
+nnoremap <silent> <leader>ec :e $MYVIMRC<cr>
+
+" Shortcut to source (reload) THIS configuration file after editing it: (s)ource (c)onfiguraiton
+nnoremap <silent> <leader>et :source $MYVIMRC<cr>
+
+" use ;; for escape
+" http://vim.wikia.com/wiki/Avoid_the_escape_key
+inoremap ;; <Esc>
+
+" go to next buffer
+nnoremap <silent> <leader>bn :bn<CR>
+nnoremap <C-l> :bn<CR>
+" go to previous buffer
+nnoremap <silent> <leader>bp :bp<CR>
+nnoremap <C-h> :bp<CR>
+" close buffer
+nnoremap <silent> <leader>bd :bd<CR>
+" kill buffer
+nnoremap <silent> <leader>bk :bd!<CR>
+" list buffers
+nnoremap <silent> <leader>bl :ls<CR>
+" list and select buffer
+nnoremap <silent> <leader>bg :ls<CR>:buffer<Space>
+
+" horizontal split with new buffer
+nnoremap <silent> <leader>bh :new<CR>
+
+" vertical split with new buffer
+nnoremap <silent> <leader>bv :vnew<CR>
+
+" redraw screan and clear search highlighted items
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+
+" Move window
+map <Leader>h <C-w>h
+map <Leader>k <C-w>k
+map <Leader>j <C-w>j
+map <Leader>l <C-w>l
+
+" improved keyboard support for navigation (especially terminal)
+" https://neovim.io/doc/user/nvim_terminal_emulator.html
+tnoremap <Esc> <C-\><C-n>
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+" Start terminal in insert mode
+:set splitright
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+nnoremap <silent> <leader>tt :terminal<CR>
+nnoremap <silent> <leader>tv :vnew<CR>:terminal<CR>
+nnoremap <silent> <leader>th :new<CR>:terminal<CR>
+tnoremap <C-x> <C-\><C-n><C-w>q
+nnoremap <C-t> :vsp<CR>:term<CR>i 
+
+" ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = ''
 
 nnoremap <S-C-p> "0p
 " Delete without yank
@@ -46,12 +112,6 @@ nmap <Tab> :tabnext<Return>
 " Split window
 nmap <Leader>s :split<Return><C-w>w
 nmap <Leader>v :vsplit<Return><C-w>w
-" Move window
-"nmap <Space> <C-w>w
-map <Leader>h <C-w>h
-map <Leader>k <C-w>k
-map <Leader>j <C-w>j
-map <Leader>l <C-w>l
 " Resize window
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
@@ -75,9 +135,6 @@ augroup compileandrun
     autocmd filetype cpp nnoremap <f5> :w <bar> !g++ -std=c++17 % <cr> :vnew <bar> :te "a.exe" <cr><cr>
     autocmd filetype cpp nnoremap <f6> :vnew <bar> :te "a.exe" <cr>
 augroup END
-:set splitright
-nnoremap <C-t> :vsp<CR>:term<CR>i 
-tnoremap <Esc> <C-\><C-n>
 
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv

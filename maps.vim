@@ -54,6 +54,7 @@ nnoremap <A-l> <C-w>l
 
 " Start terminal in insert mode
 :set splitright
+:set splitbelow
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 nnoremap <silent> <leader>tt :terminal<CR>
 nnoremap <silent> <leader>tv :vnew<CR>:terminal<CR>

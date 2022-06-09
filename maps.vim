@@ -1,14 +1,14 @@
-let mapleader=";"
+let mapleader=" "
 
 "Shortcurt to edit this config file: (e)dit (c)onfiguration
 nnoremap <silent> <leader>ec :e $MYVIMRC<cr>
 
 " Shortcut to source (reload) THIS configuration file after editing it: (s)ource (c)onfiguraiton
-nnoremap <silent> <leader>et :source $MYVIMRC<cr>
+nnoremap <silent> <leader>rc :source $MYVIMRC<cr>
 
 " use ;; for escape
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
-inoremap ;; <Esc>
+"inoremap ;; <Esc>
 
 " go to next buffer
 nnoremap <silent> <leader>bn :bn<CR>
@@ -72,6 +72,7 @@ nnoremap <S-C-p> "0p
 nnoremap <leader>d "_d
 nnoremap x "_x
 
+
 " Increment/decrement
 nnoremap + <C-a>
 nnoremap - <C-x>
@@ -129,18 +130,14 @@ nnoremap <Space>q :q<CR>
 
 inoremap jk <ESC>
 
-nnoremap <f9> :sp term://python %<cr><c-w><c-r>:resize 20<cr>a
-augroup compileandrun
-    autocmd!
-    autocmd filetype python nnoremap <f9>:sp term://python %<cr><c-w><c-r>:resize 20<cr>a
-    autocmd filetype cpp nnoremap <f5> :w <bar> !g++ -std=c++17 % <cr> :vnew <bar> :te "a.exe" <cr><cr>
-    autocmd filetype cpp nnoremap <f6> :vnew <bar> :te "a.exe" <cr>
-augroup END
+autocmd filetype python nnoremap <f9> :20 split term://python %<CR>
+autocmd filetype cpp nnoremap <f5> :w <bar> !g++ -std=c++17 % <cr> :vnew <bar> :te "a.exe" <cr><cr>
+autocmd filetype cpp nnoremap <f6> :vnew <bar> :te "a.exe" <cr>
 
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
 nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
 
-vmap <Space>+ <Plug>NERDCommenterToggle
-nmap <Space>+ <Plug>NERDCommenterToggle
+vmap <leader>c <Plug>NERDCommenterToggle
+nmap <leader>c <Plug>NERDCommenterToggle

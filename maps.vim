@@ -1,10 +1,10 @@
-let mapleader=" "
+let mapleader=";"
 
 "Shortcurt to edit this config file: (e)dit (c)onfiguration
 nnoremap <silent> <leader>ec :e $MYVIMRC<cr>
 
 " Shortcut to source (reload) THIS configuration file after editing it: (s)ource (c)onfiguraiton
-nnoremap <silent> <leader>rc :source $MYVIMRC<cr>
+nnoremap <silent> <leader>sc :source $MYVIMRC<cr>
 
 " use ;; for escape
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
@@ -41,7 +41,7 @@ map <Leader>j <C-w>j
 map <Leader>l <C-w>l
 
 " improved keyboard support for navigation (especially terminal)
-" https://neovim.io/doc/user/nvim_terminal_emulator.html
+" https://neovi;.io/doc/user/nvim_terminal_emulator.html
 tnoremap <Esc> <C-\><C-n>
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
@@ -112,8 +112,8 @@ nmap <Tab> :tabnext<Return>
 " Windows
 
 " Split window
-nmap <Leader>s :split<Return><C-w>w
-nmap <Leader>v :vsplit<Return><C-w>w
+"nmap <Leader>s :split<Return><C-w>w
+"nmap <Leader>v :vsplit<Return><C-w>w
 " Resize window
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
@@ -125,8 +125,8 @@ nnoremap <C-j> 10<C-e>
 nnoremap <C-k> 10<C-y>
 nmap <Leader>f <Plug>(easymotion-s2)
 
-nnoremap <Space>w :w<CR>
-nnoremap <Space>q :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 
 inoremap jk <ESC>
 

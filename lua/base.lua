@@ -15,7 +15,6 @@ vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.shell = 'pwsh'
 vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 vim.opt.inccommand = 'split'
 vim.opt.smarttab = true
@@ -40,3 +39,18 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 })
 
 vim.opt.formatoptions:append { 'r' }
+
+
+local has = function(x)
+  return vim.fn.has(x) == 1
+end
+
+local is_win = has "win32"
+local is_mac = has "macunix"
+if is_win then
+  vim.opt.shell = 'pwsh'
+elseif is_mac then
+  vim.opt.shell = 'fish'
+else
+  vim.opt.shell = 'bash'
+end

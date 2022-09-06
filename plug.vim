@@ -16,7 +16,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 if has("nvim")
   "Copilot
-  Plug 'github/copilot.vim'
+  "Plug 'github/copilot.vim'
   "Windows
   Plug 'pprovost/vim-ps1'
   "

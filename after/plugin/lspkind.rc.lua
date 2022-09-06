@@ -3,14 +3,14 @@ local fmt = string.format
 
 local kind_presets = {
   default = {
--- if you change or add symbol here
--- replace corresponding line in readme
+    -- if you change or add symbol here
+    -- replace corresponding line in readme
     Text = '', -- Text
-    Method = '', -- Method
+    Method = '', -- Method
     Function = '', -- Function
-    Constructor = '', -- Constructor
-    Field = '', -- Field
-    Variable = '', -- Variable
+    Constructor = '', -- Constructor
+    Field = 'ﰠ', -- Field
+    Variable = '', -- Variable
     Class = '', -- Class
     Interface = 'ﰮ', -- Interface
     Module = '', -- Module
@@ -114,7 +114,7 @@ function lspkind.init(opts)
 
   local symbol_map = kind_presets[preset]
   local symbol_map = (opts and opts['symbol_map'] and
-                       vim.tbl_extend('force', symbol_map, opts['symbol_map'])) or symbol_map
+      vim.tbl_extend('force', symbol_map, opts['symbol_map'])) or symbol_map
 
   local symbols = {}
   local len = kind_len
@@ -132,7 +132,7 @@ function lspkind.init(opts)
     end
   end
 
-  for k,v in pairs(symbols) do
+  for k, v in pairs(symbols) do
     require('vim.lsp.protocol').CompletionItemKind[k] = v
   end
 end

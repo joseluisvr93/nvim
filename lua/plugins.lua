@@ -32,6 +32,9 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-calc'
   use 'octaltree/cmp-look'
   use 'neovim/nvim-lspconfig' -- LSP
+
+  use 'williamboman/nvim-lsp-installer'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'

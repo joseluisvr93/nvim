@@ -16,8 +16,7 @@ end
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetupes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" }
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
 }
 
 nvim_lsp.sumneko_lua.setup {

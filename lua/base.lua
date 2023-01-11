@@ -49,7 +49,11 @@ end
 local is_win = has "win32"
 local is_mac = has "macunix"
 if is_win then
-  vim.opt.shell = 'pwsh'
+  vim.cmd([[let &shell = 'pwsh']])
+  vim.cmd([[let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;']])
+  vim.cmd([[let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode']])
+  vim.cmd([[let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode']])
+  vim.cmd([[set shellquote= shellxquote= ]])
 elseif is_mac then
   vim.opt.shell = 'fish'
 else

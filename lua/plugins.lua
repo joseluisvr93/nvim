@@ -31,7 +31,6 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'hrsh7th/cmp-calc'
   use 'octaltree/cmp-look'
-  use 'neovim/nvim-lspconfig' -- LSP
 
   use 'williamboman/nvim-lsp-installer'
 
@@ -54,6 +53,7 @@ packer.startup(function(use)
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig' -- LSP
 
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
@@ -78,5 +78,17 @@ packer.startup(function(use)
 
   use 'goolord/alpha-nvim'
 
+  -- jupyter plugin
+  use {
+    "ahmedkhalf/jupyter-nvim",
+    run = ":UpdateRemotePlugins",
+    config = function()
+      require("jupyter-nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
   -- use 'Shougo/defx.nvim'
 end)

@@ -20,12 +20,18 @@ packer.startup(function(use)
   }
   use 'kyazdani42/nvim-web-devicons' -- File icons
 
-  use 'glepnir/lspsaga.nvim'
-  use 'L3MON4D3/LuaSnip' -- Snippet
+  use({
+    'glepnir/lspsaga.nvim',
+    branch = "main",
+    config = function()
+      require("lspsaga").setup({})
+    end,
+  })
+  use 'L3MON4D3/LuaSnip'     -- Snippet
   use 'hoob3rt/lualine.nvim' -- Statusline
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-vmp source for neovim's built-in LSP
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-buffer'   -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp' -- Completion
@@ -41,22 +47,28 @@ packer.startup(function(use)
 
   if is_win then
     use {
-      'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp'
+      'tzachar/cmp-tabnine', run = './install.ps1', requires = 'hrsh7th/nvim-cmp'
     }
   else
     use {
-      'tzachar/cmp-tabnine', run = 'powershell ./install.ps1', requires = 'hrsh7th/nvim-cmp'
+      'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp'
     }
   end
 
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+  use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig' -- LSP
 
+  use 'jose-elias-alvarez/typescript.nvim'
+
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  use 'rmagatti/alternate-toggler' -- alternate between True and False
+  use 'gcmt/wildfire.vim'          -- visual between [] {} ()
+  use 'tpope/vim-surround'         -- change surround
+  use 'mg979/vim-visual-multi'
 
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'nvim-telescope/telescope.nvim'

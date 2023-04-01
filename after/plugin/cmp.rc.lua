@@ -116,15 +116,15 @@ cmp.setup({
 
 })
 -- Setup lspconfig.
-local lsp = require 'lspconfig'
-local cmp_lsp = require 'cmp_nvim_lsp'
-
-lsp.vimls.setup {
-  capabilities =
-  cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-
-vim.cmd [[
-  set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
-]]
+--local lsp = require 'lspconfig'
+--local cmp_lsp = require 'cmp_nvim_lsp'
+--
+--lsp.vimls.setup {
+--  capabilities =
+--  cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+--}
+--
+--vim.cmd [[
+--  set completeopt=menuone,noinsert,noselect
+--  highlight! default link CmpItemKind CmpItemMenuDefault
+--]]

@@ -88,7 +88,13 @@ keymap.set('x', '<S-tab>', '<gv')
 keymap.set('n', '<space>o', 'o<esc>0"_D')
 keymap.set('n', '<space>O', 'O<esc>0"_D')
 
+keymap.set('n', '<A-v>', '<C-v>')
+
 -- correr python
 vim.api.nvim_command [[au filetype python nnoremap <f9> :20 split term://python %<cr>]]
 vim.api.nvim_command [[au filetype cpp nnoremap <f5> :w <bar> !g++ -std=c++17 %<cr> :vnew <bar> :te "a.exe" <cr><cr>]]
 vim.api.nvim_command [[au filetype cpp nnoremap <f6> :vnew <bar> :te "a.exe" <cr>]]
+
+
+keymap.set('n', 'H', '^')
+keymap.set('n', 'L', '$')

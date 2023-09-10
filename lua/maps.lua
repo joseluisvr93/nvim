@@ -9,6 +9,7 @@ keymap.set('n', '<space>sa', ':source %<cr>')
 
 -- Use ;; for escape
 keymap.set('i', ';;', '<ESC>')
+keymap.set('v', ';;', '<ESC>')
 
 -- Go to the next buffer
 keymap.set('n', '<space>bn', ':bn<cr>')
@@ -23,7 +24,7 @@ keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
 
 -- Delete a word backwards
-keymap.set('n', 'dw', 'vb"_d')
+-- keymap.set('n', 'dw', 'vb"_d')
 
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
@@ -48,11 +49,13 @@ keymap.set('n', '<space>>', '10<C-w><')
 keymap.set('n', '<space><', '10<C-w>>')
 
 keymap.set('i', 'jk', '<ESC>')
-keymap.set('n', '<space>w', ':w<return>')
+keymap.set('n', '<space>w', ':w!<return>')
 keymap.set('n', '<space>q', ':q<return>')
 
 -- Improve keybooard support for navigation (especially terminal)
 keymap.set('t', '<esc>', '<C-\\><C-n>')
+keymap.set('t', 'jk', '<C-\\><C-n>')
+keymap.set('t', ';;', '<C-\\><C-n>')
 keymap.set('t', '<A-h>', '<C-\\><C-n><C-w>h')
 keymap.set('t', '<A-j>', '<C-\\><C-n><C-w>j')
 keymap.set('t', '<A-k>', '<C-\\><C-n><C-w>k')

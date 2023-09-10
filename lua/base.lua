@@ -34,6 +34,7 @@ opt.backspace = 'start,eol,indent'
 opt.path:append { '**' } -- Finding files - Search down into subfolders
 opt.wildignore:append { '*/node_modules/*' }
 opt.swapfile = false
+vim.g.mapleader = " "
 
 opt.ignorecase = true
 

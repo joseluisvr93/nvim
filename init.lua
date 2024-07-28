@@ -1,11 +1,17 @@
+require('base')
+require('highlights')
+require('maps')
+require('plugins')
+
 local has = function(x)
   return vim.fn.has(x) == 1
 end
 
 -- local is_mac = has "macunix"
 local is_win = has "win32"
+
 if is_win then
-  vim.cmd "set spellfile=~/AppData/Local/nvim/spell/en.utf-8.add"
+  require('windows')
 else
-  vim.cmd "set spellfile=~/.config/nvim/spell/en.utf-8.add"
+  require('macos')
 end

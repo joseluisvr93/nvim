@@ -1,0 +1,14 @@
+<space>ta -> cambia entre true y false
+
+
+visual Multi
+  control flechitas - modo normal
+  control n - seleciona la palabra
+    n	find next (same as C-n)
+    N	find previous
+    ]	goto next
+    [	goto previous
+    q	skip and go to next
+    Q	remove region
+    C-f	fast forward (go to first region in next page)
+    C-b	fast backward (go to first region in previous page)
